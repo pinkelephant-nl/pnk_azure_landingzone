@@ -11,8 +11,8 @@ param Tags object = {
 }
 
 // VNET parameters
-param vnetAddressPrefix string ='10.210.11.0/24'
-param subnet1Prefix string = '10.210.11.0/25'
+param vnetAddressPrefix string ='0.0.0.0/24'
+param subnet1Prefix string = '0.0.0.0/25'
 
 //VM parameters
 param localadmin string = 'adm_pink'
