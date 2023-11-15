@@ -11,46 +11,46 @@ param Tags object = {
 }
 
 // VNET parameters
-param vnetAddressPrefix string ='10.210.8.0/23'
-param subnet1Prefix string = '10.210.9.0/25'
-param GatewaySubnetPrefix string = '10.210.8.0/27'
-param bastionSubnetPrefix string = '10.210.8.32/28'
+param vnetAddressPrefix string ='0.0.0.0/23'
+param subnet1Prefix string = '0.0.0.0/25'
+param GatewaySubnetPrefix string = '0.0.0.0/27'
+param bastionSubnetPrefix string = '0.0.0.32/28'
 
 // VPN 1 parameters
 param LocalNetworkGateway1destination string = 'true'
 param LocalNetworkGateway1addressprefixes array = [
-  '10.10.0.0/23'
-  '10.79.0.0/23'
+  '0.0.0.0/23'
+  '0.0.0.0/23'
 ]
-param LocalNetworkGateway1GatewayAddress string = '87.233.40.5'
-param connection1sharedkey string = 'Lvc8!78MTaaY1kzP@hsfUy'
+param LocalNetworkGateway1GatewayAddress string = '0.0.0.0'
+param connection1sharedkey string = 'RandomTXTstring'
 
 // VPN 2 parameters
-param LocalNetworkGateway2destination string = 'oss'
+param LocalNetworkGateway2destination string = 'location2'
 param LocalNetworkGateway2addressprefixes array = [
-  '10.10.0.0/23'
-  '10.79.0.0/23'
+  '0.00.0.0/23'
+  '00.0.0.0/23'
 ]
-param LocalNetworkGateway2GatewayAddress string = '10.40.5.7'
-param connection2sharedkey string = ''
+param LocalNetworkGateway2GatewayAddress string = '0.0.0.0'
+param connection2sharedkey string = 'RandomTXTstring'
 
 // VPN 3 parameters
-param LocalNetworkGateway3destination string = 'scherpenzeel'
+param LocalNetworkGateway3destination string = 'location3'
 param LocalNetworkGateway3addressprefixes array = [
-  '10.10.0.0/23'
-  '10.79.0.0/23'
+  '0.0.0.0/23'
+  '0.0.0.0/23'
 ]
-param LocalNetworkGateway3GatewayAddress string = '10.40.5.8'
-param connection3sharedkey string = ''
+param LocalNetworkGateway3GatewayAddress string = '0.0.0.0'
+param connection3sharedkey string = 'RandomTXTstring'
 
 // VPN 4 parameters
-param LocalNetworkGateway4destination string = 'nieuwkuijk'
+param LocalNetworkGateway4destination string = 'location4'
 param LocalNetworkGateway4addressprefixes array = [
-  '10.10.0.0/23'
-  '10.79.0.0/23'
+  '0.0.0.0/23'
+  '0.0.0.0/23'
 ]
-param LocalNetworkGateway4GatewayAddress string = '10.40.5.9'
-param connection4sharedkey string = ''
+param LocalNetworkGateway4GatewayAddress string = '0.0.0.0'
+param connection4sharedkey string = 'RandomTXTstring'
 
 // Create resourcegroups
 resource rgcore 'Microsoft.Resources/resourceGroups@2022-09-01' = {
