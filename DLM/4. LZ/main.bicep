@@ -2,16 +2,16 @@ targetScope= 'subscription'
 param location string = 'westeurope'
 param custPrefix string = 'dlm'
 param subPrefix string = 'lz'
-param tenantId string = 'fd7050d1-7fe7-4411-8539-0b2ee218b709'
+param tenantId string = 'Tenant ID'
 
 // VNET parameters
-param vnetAddressPrefix string ='10.210.12.0/22'
-param subnet1Prefix string = '10.210.12.0/25'
-param subnet2Prefix string = '10.210.14.0/25'
+param vnetAddressPrefix string ='0.0.0.0/22'
+param subnet1Prefix string = '0.0.0.0/25'
+param subnet2Prefix string = '0.0.0.0/25'
 
 // AVD parameters
 param avd bool = true
-param subnet3Prefix string = '10.210.13.0/25'
+param subnet3Prefix string = '0.0.0.0/25'
 
 param Tags object = {
   Environment: 'Prod'
