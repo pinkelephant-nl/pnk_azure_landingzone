@@ -39,16 +39,6 @@ resource salz 'Microsoft.Storage/storageAccounts@2022-09-01' = {
     accessTier: 'Hot'
     largeFileSharesState: 'Enabled'
     minimumTlsVersion: 'TLS1_2'
-    /*
-    azureFilesIdentityBasedAuthentication: {
-      directoryServiceOptions: 'AD'
-      activeDirectoryProperties: {
-        domainGuid: domainGuid
-        domainName: '${custId}.local'
-        domainSid: domainSid
-        forestName: '${custId}.local'
-        netBiosDomainName: custId
-      }*/
     }
 }
 
