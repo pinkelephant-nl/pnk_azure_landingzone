@@ -11,11 +11,11 @@ param Tags object = {
 }
 
 // Domain parameters
-param custId string = 'daelmans'
+param custId string = 'customer-name'
 
 // VNET parameters
-param vnetAddressPrefix string = '10.210.10.0/24'
-param subnet1Prefix string = '10.210.10.0/25'
+param vnetAddressPrefix string = '0.0.0.0/24'
+param subnet1Prefix string = '0.0.0.0/25'
 
 // VM parameters
 param localadmin string = 'adm_pink'
