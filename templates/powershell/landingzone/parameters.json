@@ -1,0 +1,32 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+     "subscriptionidcon":{
+        "value": "<connectivity_subscription_id>"
+      },
+     "subscriptionidide":{
+        "value": "<identity_subscription_id>"
+      },
+     "subscriptionidman":{
+        "value": "<management_subscription_id>"
+      },
+      "subscriptionidlz":{
+        "value": "<landingzone_subscription_id"
+      },    
+     "customerid":{
+        "value": "<Customer_id>"
+      },
+     "customerFullName":{
+        "value": "<Customer_FullName_Without_Spaces>"
+      },
+     "addressprefix":{
+        "value": "<First_two_IP_Digets>"
+      },
+      "rgLocation":{
+        "value": "westeurope"
+      }
+  
+  
+    }
+  }
