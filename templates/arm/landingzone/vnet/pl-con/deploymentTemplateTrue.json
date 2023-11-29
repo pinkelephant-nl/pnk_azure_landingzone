@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.4.613.9944",
+      "templateHash": "17386612715415396913"
+    }
+  },
+  "parameters": {
+    "customerid": {
+      "type": "string"
+    },
+    "addressprefix": {
+      "type": "string"
+    },
+    "rgLocation": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    }
+  },
+  "functions": [],
+  "resources": [
+        
+        {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2020-06-01",
+      "name": "[concat(parameters('customerid'), '-vnet-pl-con-prd-westeu-001')]",
+      "location": "[parameters('rgLocation')]",
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "[concat(parameters('addressprefix'), '.144.0/23')]"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "GatewaySubnet",
+            "properties": {
+              "addressPrefix": "[concat(parameters('addressprefix'), '.144.0/27')]"
+            }
+          },
+          {
+            "name": "AzureBastionSubnet",
+            "properties": {
+              "addressPrefix": "[concat(parameters('addressprefix'), '.144.64/26')]"
+            }
+          },
+          {
+            "name": "[concat(parameters('customerid'), '-snet-pl-con-prd-001')]",
+            "properties": {
+              "addressPrefix": "[concat(parameters('addressprefix'), '.145.0/25')]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
