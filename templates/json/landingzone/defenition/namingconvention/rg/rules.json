@@ -1,0 +1,37 @@
+{
+"if": {
+      "allOf": [
+        {
+          "field": "type",
+          "match": "Microsoft.Resources/subscriptions/resourceGroups"
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-pl-identity-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-pl-connectivity-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-pl-management-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-lz-', parameters('customerID'),'-*')]"
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+}
