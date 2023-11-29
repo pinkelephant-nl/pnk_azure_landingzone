@@ -1,0 +1,40 @@
+"tag1": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag-1",
+        "description": "Name of the tag'"
+      },
+      "defaultValue": "Business Criticality"
+    },
+    "tag2": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag-2",
+        "description": "Name of the tag'"
+      },
+      "defaultValue": "Business Unit"
+    },
+    "tag3": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag-3",
+        "description": "Name of the tag'"
+      },
+      "defaultValue": "Infrastructure team"
+    },
+    "tag4": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag-4",
+        "description": "Name of the tag, such as 'environment'"
+      },
+      "defaultValue": "Operations Team"
+    },
+    "tag5": {
+      "type": "String",
+      "metadata": {
+        "displayName": "Tag-5",
+        "description": "Name of the tag'"
+      },
+      "defaultValue": "Production environment"
+    }
