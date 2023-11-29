@@ -1,0 +1,83 @@
+{
+"if": {
+      "allOf": [
+        {
+          "field": "[concat('tags[', parameters('tag1'), ']')]",
+          "notEquals": "[resourceGroup().tags[parameters('tag1')]]"
+        },
+        {
+          "value": "[resourceGroup().tags[parameters('tag1')]]",
+          "notEquals": ""
+        },
+        {
+          "field": "[concat('tags[', parameters('tag2'), ']')]",
+          "notEquals": "[resourceGroup().tags[parameters('tag2')]]"
+        },
+        {
+          "value": "[resourceGroup().tags[parameters('tag2')]]",
+          "notEquals": ""
+        },
+        {
+          "field": "[concat('tags[', parameters('tag3'), ']')]",
+          "notEquals": "[resourceGroup().tags[parameters('tag3')]]"
+        },
+        {
+          "value": "[resourceGroup().tags[parameters('tag3')]]",
+          "notEquals": ""
+        },
+        {
+          "field": "[concat('tags[', parameters('tag4'), ']')]",
+          "notEquals": "[resourceGroup().tags[parameters('tag4')]]"
+        },
+        {
+          "value": "[resourceGroup().tags[parameters('tag4')]]",
+          "notEquals": ""
+        },
+        {
+          "field": "[concat('tags[', parameters('tag5'), ']')]",
+          "notEquals": "[resourceGroup().tags[parameters('tag5')]]"
+        },
+        {
+          "value": "[resourceGroup().tags[parameters('tag5')]]",
+          "notEquals": ""
+        }
+      ]
+    },
+    "then": {
+      "effect": "modify",
+      "details": {
+        "roleDefinitionIds": [
+          "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+        ],
+        "operations": [
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tag1'), ']')]",
+            "value": "[resourceGroup().tags[parameters('tag1')]]"
+          },
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tag2'), ']')]",
+            "value": "[resourceGroup().tags[parameters('tag2')]]"
+          },
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tag3'), ']')]",
+            "value": "[resourceGroup().tags[parameters('tag3')]]"
+          },
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tag4'), ']')]",
+            "value": "[resourceGroup().tags[parameters('tag4')]]"
+          },
+          {
+            "operation": "addOrReplace",
+            "field": "[concat('tags[', parameters('tag5'), ']')]",
+            "value": "[resourceGroup().tags[parameters('tag5')]]"
+          }
+        ]
+      }
+    }
+  }
+
+}
