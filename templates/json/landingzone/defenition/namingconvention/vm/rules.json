@@ -1,0 +1,145 @@
+{
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "match": "Microsoft.Compute/virtualMachines"
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-adc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-azc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-man-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-app-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-dbs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-avs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-avd-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-adc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-azc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-man-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-app-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-dbs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-avs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-avd-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-adc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-azc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-man-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-app-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-avd-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-dbs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-avs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-avd-*')]"
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  }
