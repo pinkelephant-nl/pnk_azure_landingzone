@@ -1,0 +1,176 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+                    "customerID": {
+                        "type": "string"
+                    }
+                },
+    "variables": {
+        "policyName": "_es_test",
+        "policyDisplayName": "_es_test",
+        "policyDescription": "Test Policy"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/policyDefinitions",
+            "name": "[variables('policyName')]",
+            "apiVersion": "2019-09-01",
+            "properties": {
+                "displayName": "[variables('policyDisplayName')]",
+                "policyType": "Custom",
+                "description": "[variables('policyDescription')]",
+                "metadata": {
+                    "category": "General"
+                },
+                "mode": "All",
+                
+                "policyRule": {
+                     "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "match": "Microsoft.Compute/virtualMachines"
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-adc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-azc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-man-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-app-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-dbs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-avs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azp-avd-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-adc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-azc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-man-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-app-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-dbs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-avs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azt-avd-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-adc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-azc-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-man-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-app-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-avd-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-dbs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-avs-*')]"
+          }
+        },
+        {
+          "not": {
+            "field": "name",
+            "like": "[concat(parameters('customerID'),'-azd-avd-*')]"
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+                }
+            }
+        }
+    ]
+}
