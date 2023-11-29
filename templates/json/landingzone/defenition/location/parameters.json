@@ -1,0 +1,16 @@
+{
+    "listOfAllowedLocations": {
+        "type": "array",
+        "metadata": {
+            "description": "The list of allowed locations for resources.",
+            "displayName": "Allowed locations",
+            "strongType": "location"
+        },
+        "defaultValue": [ "westeurope", "northeurope" ],
+        "allowedValues": [
+            "westeurope",
+            "northeurope"
+        ]
+    }
+
+}
